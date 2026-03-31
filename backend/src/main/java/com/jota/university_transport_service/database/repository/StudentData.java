@@ -4,21 +4,16 @@ import com.jota.university_transport_service.database.model.Address;
 import com.jota.university_transport_service.database.model.Course;
 import com.jota.university_transport_service.database.model.Institution;
 import com.jota.university_transport_service.database.model.Student;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
+@Component
 public class StudentData {
-    private List<Student> STUDENTS = new ArrayList<>();
+    private final List<Student> STUDENTS = new ArrayList<>();
 
     {
         var adress = Address.builder().addressHouse("Frei Fernando").cep("5777-0000").houseNumber("22").city("Cajueiro")
