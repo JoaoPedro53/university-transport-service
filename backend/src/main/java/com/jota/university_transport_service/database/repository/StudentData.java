@@ -4,7 +4,6 @@ import com.jota.university_transport_service.database.model.Address;
 import com.jota.university_transport_service.database.model.Course;
 import com.jota.university_transport_service.database.model.Institution;
 import com.jota.university_transport_service.database.model.Student;
-import lombok.*;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
