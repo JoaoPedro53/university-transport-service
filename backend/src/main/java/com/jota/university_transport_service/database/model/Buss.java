@@ -7,11 +7,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 public class Buss {
     private Long id;
     private Driver driver;
     private String color;
     private String plate;
     private String bussSeats;
-
+    private RouterBuss routerBuss;
 }
