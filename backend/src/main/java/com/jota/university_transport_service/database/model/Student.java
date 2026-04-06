@@ -17,4 +17,5 @@ public class Student {
     private String phoneNumber;
     private Address address;
     private Course course;
+    private Buss buss;
 }

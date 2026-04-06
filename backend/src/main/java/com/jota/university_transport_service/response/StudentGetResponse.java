@@ -1,6 +1,7 @@
 package com.jota.university_transport_service.response;
 
 import com.jota.university_transport_service.database.model.Address;
+import com.jota.university_transport_service.database.model.Buss;
 import com.jota.university_transport_service.database.model.Course;
 import com.jota.university_transport_service.database.model.Institution;
 import lombok.*;
@@ -20,4 +21,5 @@ public class StudentGetResponse {
     private String phoneNumber;
     private Address address;
     private Course course;
+    private Buss buss;
 }
