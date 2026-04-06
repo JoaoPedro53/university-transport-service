@@ -15,6 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -69,5 +70,27 @@ class StudentRepositoryTest {
 
         var listStudentEmpty = repository.findByName(null);
         Assertions.assertThat(listStudentEmpty).isNotNull().isEmpty();
+    }
+
+    @Test
+    @Order(4)
+    @DisplayName("findById return student by id")
+    void findById_ReturnStudentById_WhenSuccessful(){
+        BDDMockito.when(studentData.getSTUDENTS()).thenReturn(studentList);
+
+        var studentExpected = studentList.getFirst();
+        var studentById = repository.findById(studentExpected.getId());
+
+        Assertions.assertThat(studentById).isNotNull().contains(studentExpected);
+    }
+
+    @Test
+    @Order(4)
+    @DisplayName("findById return empty when student by id is not found")
+    void findById_ReturnEmptyStudentById_WhenSuccessful(){
+        BDDMockito.when(studentData.getSTUDENTS()).thenReturn(studentList);
+
+        var studentById = repository.findById(100L);
+        Assertions.assertThat(studentById).isNotNull().isEmpty();
     }
 }
